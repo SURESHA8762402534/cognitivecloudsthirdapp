@@ -1,4 +1,5 @@
 import {
+    Alert,
     Box,
     Button,
     Paper,
@@ -8,14 +9,16 @@ import {
     TableContainer,
     TableHead,
     TableRow,
+    Pagination,
+    CircularProgress
 
   } from "@mui/material";
-  import { Pagination } from "@mui/material";
- 
+
+  import SaveIcon from '@mui/icons-material/Save';
   import axios from "axios";
   import {  useEffect, useState } from "react";
   import { NavigateFunction, useNavigate } from "react-router";
-import FourOFour from "./FourOFour";
+
   
   export type posttype = any[];
   
@@ -64,9 +67,10 @@ import FourOFour from "./FourOFour";
   
   
     const handleSubmit = (JSONData: datatype) => {
-      navigate("jsonData", { state: JSONData });
+      navigate("/jsondata", { state: JSONData });
+    //   alert(JSON.stringify(JSONData))
     };
-  
+ 
     useEffect(() => {
       apiRequest();
       interval = setInterval(apiRequest, 10000);
@@ -84,30 +88,26 @@ import FourOFour from "./FourOFour";
                   <TableCell style={{color:'blue', fontSize:20, fontWeight:'bold', backgroundColor:"gray"}} align="center">TITLE</TableCell>
                   <TableCell style={{color:'blue', fontSize:20, fontWeight:'bold', backgroundColor:'lightcoral'}} align="center">URL</TableCell>
                   <TableCell style={{color:'blue', fontSize:20, fontWeight:'bold', backgroundColor:'lightpink'}} align="center">CREATED AT</TableCell>
-                  <TableCell style={{color:'blue', fontSize:20, fontWeight:'bold', backgroundColor:'yellow'}} align="center">AUTHOR</TableCell>
-                  <TableCell style={{color:'blue', fontSize:20, fontWeight:'bold', backgroundColor:'lightgrey'}} align="center">Raw DATA</TableCell>
+                  <TableCell style={{color:'blue', fontSize:20, fontWeight:'bold', backgroundColor:'lightgrey'}} align="center">AUTHOR</TableCell>
                 </TableHead>
                 <TableBody>
                   {data[page - 1].map(
                     (item: any): JSX.Element => (
-                      <TableRow   key={item.objectID}>
+                      <TableRow onClick={() => handleSubmit(item)}  key={item.objectID}>
                         <TableCell  style={{backgroundColor:"#C0C0C0"}}>{item.story_title ? item.story_title : "data not found"}</TableCell>
                         <TableCell  style={{backgroundColor:'#ffa080'}}>{item.story_url ? item.story_url : "data not found"}</TableCell>
                         <TableCell style={{backgroundColor:'#FFB6a1'}}>{item.created_at ? item.created_at : "data not found"}</TableCell>
-                        <TableCell style={{backgroundColor:'lightgoldenrodyellow'}}>{item.author ? item.author : "data not found"}</TableCell>
-                        <TableCell style={{backgroundColor:'lightyellow'}}>
-                          <Button onClick={() => handleSubmit(item)}>
-                            select
-                          </Button>
-                        </TableCell>
+                        <TableCell  style={{backgroundColor:'lightgoldenrodyellow'}}>{item.author ? item.author : "data not found"}</TableCell>
                       </TableRow>
                     )
                   )}
                 </TableBody>
               </Table>
             </TableContainer>
-          ) : (
-            <FourOFour/>
+          ) : (    
+        <h1>
+             <CircularProgress />Loading...
+        </h1>
           )}
         </Box>
        

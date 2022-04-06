@@ -8,10 +8,11 @@ import RawJSON from './components/RawJSON';
 function App() {
   return (
     <>
-    <FrontPage/>
+    
    
       <Routes>
-      <Route path="/jsonData" element={<RawJSON/>}/>
+      <Route path="/" element={<FrontPage/>}/>
+      <Route path='/jsondata' element={<RawJSON/>}/>
        
       </Routes>
     </>
