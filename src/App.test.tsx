@@ -1,11 +1,8 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import App from "./App";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import RawJSON from "./components/RawJSON";
 import FrontPage from "./components/FrontPage";
-import { table } from "console";
-import axios from "axios";
 
 
 describe("test on RawJSON component", () => {
