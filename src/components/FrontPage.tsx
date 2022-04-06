@@ -1,7 +1,6 @@
 import {
     Box,
     Button,
-    // makeStyles,
     Paper,
     Table,
     TableBody,
@@ -9,13 +8,12 @@ import {
     TableContainer,
     TableHead,
     TableRow,
-    styled
+
   } from "@mui/material";
   import { Pagination } from "@mui/material";
-  import { ClassNameMap } from "@mui/material";
-  // import  Pagination  from "@mui/material";
+ 
   import axios from "axios";
-  import { ChangeEvent, useEffect, useState } from "react";
+  import {  useEffect, useState } from "react";
   import { NavigateFunction, useNavigate } from "react-router";
 import FourOFour from "./FourOFour";
   
@@ -31,20 +29,6 @@ import FourOFour from "./FourOFour";
     objectID: string;
   };
   
-//   const useStyles = makeStyles(() => ({
-//     box: {
-//       justifyContent: "center",
-//       alignItems: "center",
-//       marginBottom: 20,
-//     },
-//     pageNum: {
-//       justifyContent: "center",
-//       alignItems: "center",
-//       display:'flex'
-//     },
-    
-    
-//   }));
   
   const PostTable = (): JSX.Element => {
     const [data, setData] = useState<any>("");
@@ -52,7 +36,7 @@ import FourOFour from "./FourOFour";
     let interval: NodeJS.Timer;
     const navigate: NavigateFunction = useNavigate();
     const [page, setPage] = useState(1);
-    // const classes: ClassNameMap = useStyles();
+ 
   
     const apiRequest = () => {
       axios
@@ -66,6 +50,7 @@ import FourOFour from "./FourOFour";
           if (res?.data?.exhaustiveNbHits) {
             setData((prev: any) => [...prev, res?.data?.hits]);
             counter = counter + 1;
+           
           } else {
             clearInterval(interval);
           }
@@ -125,7 +110,7 @@ import FourOFour from "./FourOFour";
             <FourOFour/>
           )}
         </Box>
-        {/* className={classes.pageNum} */}
+       
         <Pagination 
           page={page}
           count={data.length}

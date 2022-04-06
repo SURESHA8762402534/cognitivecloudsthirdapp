@@ -1,16 +1,9 @@
-import { Box, Button, makeStyles } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { NavigateFunction, useLocation, useNavigate } from "react-router";
-import { ClassNameMap } from "@mui/material";
 
 
-// const useStyles=makeStyles(()=> ({
-//   box: {
-//     marginTop: 50
-//   }
-// }))
 
 const RawJSON = (): JSX.Element => {
-//   const classes: ClassNameMap = useStyles();
 
   const navigate: NavigateFunction = useNavigate();
   const local: unknown = useLocation().state;
