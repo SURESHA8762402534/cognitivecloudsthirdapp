@@ -6,7 +6,7 @@ import PostsTable from './components/PostsTable';
 
 const App: React.FC = () => {
   const [page, setPage] = useState(1);
-  const [storedData, setStoredData]: any = useState({});
+  const [storedData, setStoredData]: any = useState([]);
   const navigate = useNavigate();
   let interval: NodeJS.Timer;
 
@@ -17,8 +17,8 @@ const App: React.FC = () => {
     const resData = await response.json();
     
   console.log(resData)
-    if (storedData[page] === undefined) {
-      setStoredData({ ...storedData, [page]: resData.hits });
+    if (!storedData.includes(...resData.hits)) {
+      setStoredData([...storedData,  ...resData.hits ]);
     }
   };
 
@@ -26,6 +26,7 @@ const App: React.FC = () => {
   const handelPage = ()=>{
     setPage((page)=>page+1)
     console.log('page called');
+    // console.log(storedData)
   }
 
   useEffect(() => {

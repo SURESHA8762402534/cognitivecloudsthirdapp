@@ -21,27 +21,26 @@ type Props = {
 
 const PostsTable: React.FC<Props> = ({ ...props }) => {
 
-    const navigate = useNavigate()
-
-  const handlePageChange = (event: any, value: number) => {
-    props.setPage(value);
-  };
+  // const handlePageChange = (event: any, value: number) => {
+  //   props.setPage(value);
+  // };
 
   const handleSubmit = (JSONData: Props) => {
-    navigate("/jsondata", { state: JSONData });
+    props.navigate("/jsondata", { state: JSONData });
     //   alert(JSON.stringify(JSONData))
   };
 
  
 
   useEffect(()=>{
+    console.log(props.storedData)
     window.addEventListener('scroll', () => {
         if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
           props.setPage((prev:any)=>prev+1)
           console.log('page scrolled')
         }
       })
-  },[])
+  },[props.storedData])
   return (
     <div>
       {props.storedData[props.page] === undefined ? (
@@ -63,14 +62,14 @@ const PostsTable: React.FC<Props> = ({ ...props }) => {
                 <TableCell style={{ color: 'white', fontSize: 20, fontWeight: 'bold', backgroundColor: 'gray' }} align="center">AUTHOR</TableCell>
               </TableHead>
               <TableBody>
-              {props.storedData[props.page].map((item: any) => {
+              {props.storedData.map((item: any) => {
                 return (
-                    <TableRow onClick={() => handleSubmit(item)}  style={{ backgroundColor: "#f9f9f9" }}>
+                    <tr id='tr' onClick={() => handleSubmit(item)}  style={{ backgroundColor: "#f9f9f9" }}>
                       <TableCell >{item.story_title ? item.story_title : <Typography style={{ color: 'red' }}>data not found</Typography>}</TableCell>
                       <TableCell >{item.story_url ? item.story_url : <Typography style={{ color: 'red' }}>data not found</Typography>}</TableCell>
                       <TableCell >{item.created_at ? item.created_at : <Typography style={{ color: 'red' }}>data not found</Typography>}</TableCell>
                       <TableCell >{item.author ? item.author : <Typography style={{ color: 'red' }}>data not found</Typography>}</TableCell>
-                    </TableRow>
+                    </tr>
 
                 )
             })
@@ -79,13 +78,13 @@ const PostsTable: React.FC<Props> = ({ ...props }) => {
               </Table>
               
              <div>
-            <Pagination
+            {/* <Pagination
               className="pagination"
               count={50}
               page={props.page}
               color="primary"
               onChange={handlePageChange}
-            />
+            /> */}
           </div>
           </div>
          

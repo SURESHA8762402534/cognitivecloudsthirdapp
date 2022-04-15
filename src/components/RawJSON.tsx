@@ -17,7 +17,7 @@ const RawJSON = (): JSX.Element => {
         Raw JSON Data
       </Box>
       <Button variant="contained" onClick={handleClick}> Back </Button>
-      <Box style={{marginTop:50}} >{JSON.stringify(local)}</Box>
+      <Box style={{marginTop:50}} ><pre>{JSON.stringify(local,null,2)}</pre></Box>
      
     </Box>
   );
