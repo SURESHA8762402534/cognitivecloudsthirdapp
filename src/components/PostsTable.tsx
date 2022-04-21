@@ -30,20 +30,26 @@ const PostsTable: React.FC<Props> = ({ ...props }) => {
     //   alert(JSON.stringify(JSONData))
   };
 
- 
+  window.addEventListener('scroll', () => {
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+      props.setPage((prev:any)=>prev+1)
+      console.log('page scrolled')
+    }
+  })
 
-  useEffect(()=>{
-    console.log(props.storedData)
-    window.addEventListener('scroll', () => {
-        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
-          props.setPage((prev:any)=>prev+1)
-          console.log('page scrolled')
-        }
-      })
-  },[props.storedData])
+  // useEffect(()=>{
+  //   console.log(props.storedData)
+  //   window.addEventListener('scroll', () => {
+  //       if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+  //         props.setPage((prev:any)=>prev+1)
+  //         console.log('page scrolled')
+  //       }
+  //     })
+  // },[props.storedData])
+
   return (
     <div>
-      {props.storedData[props.page] === undefined ? (
+      {props.storedData === undefined ? (
           <>
            <CircularProgress />Loading...
           </>
@@ -51,8 +57,7 @@ const PostsTable: React.FC<Props> = ({ ...props }) => {
       ) : (
         <div>
           <div
-            className="table-wrapper"
-            style={{ height: "100vh", width: "98vw", marginBottom:'50vh' }}
+            style={{ height: "100vh", width: "98vw", marginBottom:'2rem' }}
           >
               <Table stickyHeader>
               <TableHead >
@@ -62,7 +67,7 @@ const PostsTable: React.FC<Props> = ({ ...props }) => {
                 <TableCell style={{ color: 'white', fontSize: 20, fontWeight: 'bold', backgroundColor: 'gray' }} align="center">AUTHOR</TableCell>
               </TableHead>
               <TableBody>
-              {props.storedData.map((item: any) => {
+              {Array.from(props.storedData).map((item: any) => {
                 return (
                     <tr id='tr' onClick={() => handleSubmit(item)}  style={{ backgroundColor: "#f9f9f9" }}>
                       <TableCell >{item.story_title ? item.story_title : <Typography style={{ color: 'red' }}>data not found</Typography>}</TableCell>

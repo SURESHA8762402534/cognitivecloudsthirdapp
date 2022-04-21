@@ -6,51 +6,103 @@ Object {
   "baseElement": <body>
     <div>
       <div>
-        <span
-          class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
-          role="progressbar"
-          style="width: 40px; height: 40px;"
-        >
-          <svg
-            class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-            viewBox="22 22 44 44"
+        <div>
+          <div
+            style="height: 100vh; width: 98vw; margin-bottom: 2rem;"
           >
-            <circle
-              class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
-              cx="44"
-              cy="44"
-              fill="none"
-              r="20.2"
-              stroke-width="3.6"
-            />
-          </svg>
-        </span>
-        Loading...
+            <table
+              class="MuiTable-root MuiTable-stickyHeader css-xn82ks-MuiTable-root"
+            >
+              <thead
+                class="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+              >
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                  scope="col"
+                  style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+                >
+                  TITLE
+                </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                  scope="col"
+                  style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+                >
+                  URL
+                </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                  scope="col"
+                  style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+                >
+                  CREATED AT
+                </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                  scope="col"
+                  style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+                >
+                  AUTHOR
+                </th>
+              </thead>
+              <tbody
+                class="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              />
+            </table>
+            <div />
+          </div>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div>
-      <span
-        class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
-        role="progressbar"
-        style="width: 40px; height: 40px;"
-      >
-        <svg
-          class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
+      <div>
+        <div
+          style="height: 100vh; width: 98vw; margin-bottom: 2rem;"
         >
-          <circle
-            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
-            cx="44"
-            cy="44"
-            fill="none"
-            r="20.2"
-            stroke-width="3.6"
-          />
-        </svg>
-      </span>
-      Loading...
+          <table
+            class="MuiTable-root MuiTable-stickyHeader css-xn82ks-MuiTable-root"
+          >
+            <thead
+              class="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+            >
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                scope="col"
+                style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+              >
+                TITLE
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                scope="col"
+                style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+              >
+                URL
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                scope="col"
+                style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+              >
+                CREATED AT
+              </th>
+              <th
+                class="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-alignCenter MuiTableCell-sizeMedium css-dwuj3p-MuiTableCell-root"
+                scope="col"
+                style="color: white; font-size: 20px; font-weight: bold; background-color: gray;"
+              >
+                AUTHOR
+              </th>
+            </thead>
+            <tbody
+              class="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+            />
+          </table>
+          <div />
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],

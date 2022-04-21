@@ -11,12 +11,9 @@ const App: React.FC = () => {
   let interval: NodeJS.Timer;
 
   const fetchTableData = async () => {
-    const response = await fetch(
-      `https://hn.algolia.com/api/v1/search_by_date?query=story&page=${page}`
-    );
+    const response = await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=story&page=${page}`);
     const resData = await response.json();
-    
-  console.log(resData)
+    console.log(resData.hits)
     if (!storedData.includes(...resData.hits)) {
       setStoredData([...storedData,  ...resData.hits ]);
     }
@@ -26,7 +23,7 @@ const App: React.FC = () => {
   const handelPage = ()=>{
     setPage((page)=>page+1)
     console.log('page called');
-    // console.log(storedData)
+    console.log(page)
   }
 
   useEffect(() => {
@@ -52,7 +49,7 @@ const App: React.FC = () => {
             />
           }
         />
-         <Route path='/jsondata' element={<RawJSON/>}/>
+         <Route path='/jsondata' element={<RawJSON navigate={navigate}/>}/>
       </Routes>
     </div>
   );

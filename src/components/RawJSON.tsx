@@ -1,24 +1,30 @@
 import { Box, Button } from "@mui/material";
+import { useEffect } from "react";
 import { NavigateFunction, useLocation, useNavigate } from "react-router";
 
+type Props = {
+  navigate:any
+}
 
-
-const RawJSON = (): JSX.Element => {
+const RawJSON:React.FC<Props> = ({...props}): JSX.Element => {
 
   const navigate: NavigateFunction = useNavigate();
   const local: unknown = useLocation().state;
-    const handleClick = () => {
-        navigate(-1);
-    }
-
+    
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [local]);
   return (
     <Box>
+      <span>
+      <Button variant="contained" onClick={()=>props.navigate(-1)}> Back </Button>
       <Box  display="flex"  justifyContent="center" component={"h1"}>
-        Raw JSON Data
+        RAW JSON DATA
       </Box>
-      <Button variant="contained" onClick={handleClick}> Back </Button>
-      <Box style={{marginTop:50}} ><pre>{JSON.stringify(local,null,2)}</pre></Box>
-     
+      
+      </span>
+      <Box style={{marginTop:50}} ><pre>{JSON.stringify(local,null,3)}</pre></Box>
+    
     </Box>
   );
 };
