@@ -1,71 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test snapshot 1`] = `
+exports[`app component test snap for component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="MuiBox-root css-0"
+      <span
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
       >
-        <span>
-          <button
-            class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
-            tabindex="0"
-            type="button"
-          >
-             Back 
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </button>
-          <h1
-            class="MuiBox-root css-1l4w6pd"
-          >
-            Raw JSON Data
-          </h1>
-        </span>
-        <div
-          class="MuiBox-root css-0"
-          style="margin-top: 50px;"
+        <svg
+          class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
         >
-          <pre>
-            null
-          </pre>
-        </div>
-      </div>
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </span>
+       Loading...
     </div>
   </body>,
   "container": <div>
-    <div
-      class="MuiBox-root css-0"
+    <span
+      class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+      role="progressbar"
+      style="width: 40px; height: 40px;"
     >
-      <span>
-        <button
-          class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
-          tabindex="0"
-          type="button"
-        >
-           Back 
-          <span
-            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </button>
-        <h1
-          class="MuiBox-root css-1l4w6pd"
-        >
-          Raw JSON Data
-        </h1>
-      </span>
-      <div
-        class="MuiBox-root css-0"
-        style="margin-top: 50px;"
+      <svg
+        class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
       >
-        <pre>
-          null
-        </pre>
-      </div>
-    </div>
+        <circle
+          class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+          cx="44"
+          cy="44"
+          fill="none"
+          r="20.2"
+          stroke-width="3.6"
+        />
+      </svg>
+    </span>
+     Loading...
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
